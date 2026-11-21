@@ -3,7 +3,7 @@
 // (The anon key is meant to be public. The database rules in schema.sql are what protect your data.
 //  NEVER paste the "service_role" key here.)
 window.SITE = {
-  supabaseUrl: 'https://YOUR-PROJECT-ID.supabase.co',
+  supabaseUrl: 'https://xbdmraxcvaylvwatukqz.supabase.co',
   supabaseAnonKey: 'sb_publishable_yG6bT0etvrkVCSQUonl7EA_iWLcK_Ea',
 
   name: 'Umugati Kitchen',
