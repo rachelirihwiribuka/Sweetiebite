@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+<header class="top"><span class="brand" id="brand">Admin</span><span><span id="who" class="muted"></span> <button class="btn small" id="out" hidden>Sign out</button> <a class="btn small" href="index.html">View website</a></span></header>
+
+<main class="wrap" id="login-box">
+  <form id="login" class="card narrow-card">
+    <h2>Owner sign in</h2>
+    <label>Email <input name="email" type="email" autocomplete="username" required></label>
+    <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn primary" type="submit">Sign in</button>
+    <p id="login-msg" class="msg bad" hidden></p>
+  </form>
+</main>
+
+<main class="wrap" id="app" hidden>
+  <div class="chips" id="tabs"><button class="chip on" data-t="res">Bookings <span id="newcount" class="badge" hidden></span></button><button class="chip" data-t="menu">Menu</button></div>
+
+  <section id="res">
+    <div class="bar"><select id="rf"><option value="upcoming">Coming up</option><option value="new">Waiting for me to confirm</option><option value="all">All bookings</option></select><span class="muted" id="rcount"></span></div>
+    <div class="card scroll"><table class="tbl" id="rt"><thead><tr><th>When</th><th>Guest</th><th>Phone</th><th>Guests</th><th>Notes</th><th>Status</th><th></th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="menu" hidden>
+    <div class="bar"><button class="btn primary" id="add">Add a dish</button><span class="muted">Switch a dish off when it is finished. Customers only see dishes that are on.</span></div>
+    <div class="card scroll"><table class="tbl" id="mt"><thead><tr><th>Dish</th><th>Category</th><th>Price</th><th>On the menu</th><th></th></tr></thead><tbody></tbody></table></div>
+  </section>
+  <p id="msg" class="msg" hidden role="status"></p>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog" id="df">
+    <h3 id="dt">Dish</h3>
+    <label>Name <input name="name" maxlength="80" required></label>
+    <label>Category <input name="category" list="cats" maxlength="40" required placeholder="Starters, Mains, Desserts, Drinks..."></label><datalist id="cats"></datalist>
+    <label>Description <textarea name="description" rows="2" maxlength="300"></textarea></label>
+    <div class="row2"><label>Price <input name="price" type="number" min="0" step="any" required></label><label>Order in list <input name="sort_order" type="number" step="1" value="0"></label></div>
+    <label>Photo link (optional) <input name="image_url" type="url" placeholder="https://..."></label>
+    <label class="check"><input name="available" type="checkbox" checked> Show on the menu</label>
+    <p id="dmsg" class="msg bad" hidden></p>
+    <div class="row2"><button class="btn" value="cancel" formnovalidate>Cancel</button><button class="btn primary" id="save" value="ok">Save</button></div>
+  </form>
+</dialog>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurant</title>
+<meta name="description" content="Menu, opening hours and table booking.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top" id="brand">Restaurant</a>
+  <nav><a href="#menu">Menu</a><a href="#book-section">Book a table</a><a href="#visit">Find us</a></nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1 id="tagline"></h1>
+      <p id="about" class="lead"></p>
+      <p class="cta"><a class="btn primary" href="#book-section">Book a table</a> <a class="btn" href="#menu">See the menu</a></p>
+    </div>
+  </section>
+
+  <section id="menu" class="wrap">
+    <h2>Our menu</h2>
+    <div id="tabs" class="chips" role="tablist" aria-label="Menu categories"></div>
+    <div id="menu-list" class="dishes"><p class="muted">Loading the menu...</p></div>
+  </section>
+
+  <section id="book-section" class="band">
+    <div class="wrap narrow">
+      <h2>Book a table</h2>
+      <p class="muted">Send us your request and we will call you to confirm.</p>
+      <form id="book" novalidate>
+        <label>Your name <input name="name" autocomplete="name" maxlength="80" required></label>
+        <label>Phone number <input name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+250 ..." required></label>
+        <div class="row3">
+          <label>Date <input name="date" type="date" required></label>
+          <label>Time <select name="time"></select></label>
+          <label>Guests <select name="guests"></select></label>
+        </div>
+        <label>Anything we should know? (optional) <textarea name="notes" rows="2" maxlength="300" placeholder="Birthday, allergies, high chair..."></textarea></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn primary" type="submit">Send booking request</button>
+        <p id="book-msg" class="msg" hidden role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="visit" class="wrap two">
+    <div>
+      <h2>Opening hours</h2>
+      <table class="hours"><tbody id="hours"></tbody></table>
+    </div>
+    <div>
+      <h2>Find us</h2>
+      <p id="addr"></p>
+      <p><a id="map" target="_blank" rel="noopener">Open in maps</a></p>
+      <p>Phone: <a id="tel"></a><br>Email: <a id="mail"></a></p>
+      <p class="cta"><a class="btn" id="call">Call us</a> <a class="btn wa" id="wa" target="_blank" rel="noopener" hidden>WhatsApp</a></p>
+    </div>
+  </section>
+</main>
+
+<footer><p>&copy; <span id="year"></span> <span id="foot-name"></span></p></footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
